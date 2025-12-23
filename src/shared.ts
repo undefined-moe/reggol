@@ -194,7 +194,7 @@ export namespace Exporter {
       const label = Logger.color(this, code, message.name, ';1')
       const padLength = (this.label?.width ?? 0) + label.length - message.name.length
       if (this.label?.align === 'right') {
-        output += label.padStart(padLength) + space + prefix + space
+        output += space + label.padStart(padLength - 1) + space + prefix + space
         indent += (this.label.width ?? 0) + space.length
       } else {
         output += prefix + space + label.padEnd(padLength) + space
